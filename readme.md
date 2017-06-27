@@ -35,7 +35,7 @@ public function boot() {
 }
 ```
 
-For that to work, obviously you will need Currency class that implements CurrencyContract. Consider the following implementation (Laravel):
+For that to work, you will need a Currency model that implements CurrencyContract. Consider the following implementation (Laravel):
 
 ```php
 class Currency extends Eloquent implements \Makeable\ValueObjects\Amount\CurrencyContract
@@ -66,7 +66,7 @@ Database table:
 ```
 
 ### Example usages
-Quickly instantiate an amount
+Quickly create an amount
 ```php
 new Amount(100); // EUR since that's our default
 new Amount(100, Currency::fromCode('DKK')); 
@@ -75,17 +75,17 @@ new Amount(100, Currency::fromCode('DKK'));
 Convert between currencies
 ```php
 $eur = new Amount(100);
-$eur->convertTo(Currency::fromCode('DKK'))->get(); // 750 
+$dkk = $eur->convertTo(Currency::fromCode('DKK')); // 750 
 ```
 
-Perform simple calculations - even cross currency!
+Perform simple calculations - even between currencies!
 ```php
 $amount = new Amount(100, Currency::fromCode('EUR'));
 $amount->subtract(new Amount(50)); // 50 eur
-$amount->subtract(new Amount(375, Currency::fromCode('DKK))); // 50 eur
+$amount->subtract(new Amount(375, Currency::fromCode('DKK'))); // 50 eur
 ```
 
-If you are using Laravel and have a Product@getPriceAttribute() accessor that converts to Amount::class, you can even do this:
+If you are using Laravel and have a Product@getPriceAttribute() accessor that returns an Amount object, you can even do this:
 ```php
 $products = Product::all();
 $productsTotalSum = Amount::sum($products, 'price'); 
