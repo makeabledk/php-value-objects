@@ -1,0 +1,27 @@
+{
+    "name": "makeabledk/php-value-objects",
+    "license": "CC-BY-SA-4.0",
+    "autoload": {
+        "psr-4": {
+            "Makeable\\ValueObjects\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "^5.4",
+        "nesbot/carbon": "^1.22"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "friendsofphp/php-cs-fixer": "^2.3"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Makeable\\ValueObjects\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "style": "./vendor/bin/php-cs-fixer fix ./src --rules=@PSR2,@Symfony,ordered_class_elements,ordered_imports --verbose"
+    }
+}
