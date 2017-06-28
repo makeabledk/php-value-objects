@@ -2,6 +2,10 @@
 
 # Laravel Value Objects
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/makeabledk/php-value-objects.svg?style=flat-square)](https://packagist.org/packages/makeabledk/php-value-objects)
+[![Build Status](https://img.shields.io/travis/makeabledk/php-value-objects/master.svg?style=flat-square)](https://travis-ci.org/makeabledk/php-value-objects)
+[![StyleCI](https://styleci.io/repos/95551114/shield?branch=master)](https://styleci.io/repos/95552761)
+
 This package provides a set of handy value objects:
 
 - Amount
