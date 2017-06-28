@@ -34,7 +34,7 @@ class AmountOperationsTest extends AmountTestCase
     {
         $sum = Amount::sum([
             ['amount' => $this->amount(200)],
-            ['amount' => $this->amount(50)]
+            ['amount' => $this->amount(50)],
         ], 'amount');
 
         $this->assertEquals(250, $sum->get());
@@ -44,8 +44,8 @@ class AmountOperationsTest extends AmountTestCase
     {
         $sum = Amount::sum([
             ['amount' => $this->amount(200)],
-            ['amount' => $this->amount(50)]
-        ], function($item) {
+            ['amount' => $this->amount(50)],
+        ], function ($item) {
             return $item['amount'];
         });
 
