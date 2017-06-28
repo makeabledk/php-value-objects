@@ -41,7 +41,7 @@ class AmountTest extends AmountTestCase
         $imported = Amount::fromArray($exported);
         $missingAttributes = array_diff_key(array_flip(['amount', 'currency', 'formatted']), $exported);
 
-        $this->assertEmpty($missingAttributes, 'Missing export attributes: '. implode(', ', $exported));
+        $this->assertEmpty($missingAttributes, 'Missing export attributes: '.implode(', ', $exported));
         $this->assertEquals(50, $imported->get());
         $this->assertEquals('DKK', $imported->currency()->getCode());
     }

@@ -36,7 +36,7 @@ class PeriodTest extends TestCase
         $imported = Period::fromArray($exported);
         $missingAttributes = array_diff_key(array_flip(['start', 'end']), $exported);
 
-        $this->assertEmpty($missingAttributes, 'Missing export attributes: ' . implode(', ', $exported));
+        $this->assertEmpty($missingAttributes, 'Missing export attributes: '.implode(', ', $exported));
         $this->assertEquals($imported->getStart()->toDateTimeString(), Carbon::today()->toDateTimeString());
         $this->assertEquals($imported->getEnd()->toDateTimeString(), Carbon::tomorrow()->toDateTimeString());
     }

@@ -21,7 +21,7 @@ abstract class Whitelist
      */
     public function __construct($value)
     {
-        if (!static::isValid($value)) {
+        if (! static::isValid($value)) {
             throw new static::$exceptionClass('Invalid value '.$value);
         }
         $this->status = $value;
