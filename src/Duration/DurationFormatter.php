@@ -75,8 +75,8 @@ class DurationFormatter
     {
         return $units->reduce(function ($format, $unit) {
             return str_replace(
-                array($unit['placeholder'].$unit['placeholder'], $unit['placeholder']),
-                array(str_pad((string) $unit['value'], 2, '0', STR_PAD_LEFT), $unit['value']),
+                [$unit['placeholder'].$unit['placeholder'], $unit['placeholder']],
+                [str_pad((string) $unit['value'], 2, '0', STR_PAD_LEFT), $unit['value']],
                 $format
             );
         }, $format);

@@ -18,7 +18,9 @@ trait RetrievesValues
         }
 
         if ($callback === null) {
-            return function ($item) { return $item; };
+            return function ($item) {
+                return $item;
+            };
         }
 
         return function ($item) use ($callback) {

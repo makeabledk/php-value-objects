@@ -3,7 +3,6 @@
 namespace Makeable\ValueObjects\Tests\Duration;
 
 use Makeable\ValueObjects\Duration\Duration;
-use Makeable\ValueObjects\Duration\DurationFormatter;
 use Makeable\ValueObjects\Tests\TestCase;
 
 class DurationTest extends TestCase
@@ -30,7 +29,7 @@ class DurationTest extends TestCase
         $imported = Duration::fromArray($exported);
         $missingAttributes = array_diff_key(array_flip(['seconds', 'minutes', 'hours', 'formatted']), $exported);
 
-        $this->assertEmpty($missingAttributes, 'Missing export attributes: '. implode(', ', $exported));
+        $this->assertEmpty($missingAttributes, 'Missing export attributes: '.implode(', ', $exported));
         $this->assertEquals(3600 + 1800, $imported->getSeconds());
     }
 

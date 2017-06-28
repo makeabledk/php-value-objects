@@ -118,7 +118,7 @@ class Period implements Arrayable
             return $time;
         }
         if ($time === null) {
-            return null;
+            return;
         }
 
         return Carbon::parse($time);
