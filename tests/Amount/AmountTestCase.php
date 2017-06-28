@@ -3,8 +3,8 @@
 namespace Makeable\ValueObjects\Tests\Amount;
 
 use Makeable\ValueObjects\Amount\Amount;
-use Makeable\ValueObjects\Tests\TestCase;
 use Makeable\ValueObjects\Tests\Amount\TestCurrency as Currency;
+use Makeable\ValueObjects\Tests\TestCase;
 
 class AmountTestCase extends TestCase
 {
@@ -13,9 +13,9 @@ class AmountTestCase extends TestCase
         Amount::baseCurrency(Currency::fromCode('EUR'));
     }
 
-    protected function amount($amount, $currency=null)
+    protected function amount($amount, $currency = null)
     {
-        if(is_string($currency)) {
+        if (is_string($currency)) {
             $currency = Currency::fromCode($currency);
         }
 

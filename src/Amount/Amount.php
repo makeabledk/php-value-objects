@@ -35,7 +35,7 @@ class Amount implements Arrayable
      */
     public function __construct($amount, Currency $currency = null)
     {
-        if (!static::$baseCurrency) {
+        if (! static::$baseCurrency) {
             throw new MissingBaseCurrencyException();
         }
 
