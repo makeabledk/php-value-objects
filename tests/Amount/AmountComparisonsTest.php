@@ -36,5 +36,4 @@ class AmountComparisonsTest extends AmountTestCase
         $this->assertTrue($this->amount(100)->lte($this->amount(101)));
         $this->assertFalse($this->amount(100.001)->lte($this->amount(100)));
     }
-
 }
