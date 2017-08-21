@@ -4,8 +4,8 @@ namespace Makeable\ValueObjects\Tests\Amount;
 
 use Makeable\ValueObjects\Amount\Amount;
 use Makeable\ValueObjects\Amount\MissingBaseCurrencyException;
-use Makeable\ValueObjects\Shared\MissingPropertiesException;
 use Makeable\ValueObjects\Amount\TestCurrency as Currency;
+use Makeable\ValueObjects\Shared\MissingPropertiesException;
 
 class AmountTest extends AmountTestCase
 {
