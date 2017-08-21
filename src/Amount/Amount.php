@@ -11,6 +11,7 @@ class Amount implements Arrayable
 {
     use AmountOperations,
         ConvertsCurrencies,
+        ComparesAmounts,
         HasBaseCurrency,
         RetrievesValues,
         ValidatesArrays;
