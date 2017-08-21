@@ -30,18 +30,14 @@ class Amount implements Arrayable
      * Amount constructor.
      *
      * @param $amount
-     * @param Currency $currency
+     * @param Currency | mixed $currency null
      *
      * @throws \Exception
      */
-    public function __construct($amount, Currency $currency = null)
+    public function __construct($amount, $currency = null)
     {
-        if (! static::$baseCurrency) {
-            throw new MissingBaseCurrencyException();
-        }
-
         $this->amount = $amount;
-        $this->currency = $currency ?: static::baseCurrency();
+        $this->currency = static::normalizeCurrency($currency);
     }
 
     /**
@@ -71,10 +67,7 @@ class Amount implements Arrayable
     {
         static::requiresProperties(['amount', 'currency'], $exported);
 
-        return new static(
-            $exported['amount'],
-            call_user_func([static::$defaultCurrencyImplementation, 'fromCode'], $exported['currency'])
-        );
+        return new static($exported['amount'], static::normalizeCurrency($exported['currency']));
     }
 
     /**
@@ -83,6 +76,14 @@ class Amount implements Arrayable
     public function get()
     {
         return round($this->amount, 2);
+    }
+
+    /**
+     * Use the fake currency class as implementation for test purposes
+     */
+    public static function test()
+    {
+        static::baseCurrency(TestCurrency::fromCode('EUR'));
     }
 
     /**

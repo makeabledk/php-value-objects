@@ -1,8 +1,6 @@
 <?php
 
-namespace Makeable\ValueObjects\Tests\Amount;
-
-use Makeable\ValueObjects\Amount\CurrencyContract;
+namespace Makeable\ValueObjects\Amount;
 
 class TestCurrency implements CurrencyContract
 {

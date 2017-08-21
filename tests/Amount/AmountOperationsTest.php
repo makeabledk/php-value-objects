@@ -3,7 +3,7 @@
 namespace Makeable\ValueObjects\Tests\Amount;
 
 use Makeable\ValueObjects\Amount\Amount;
-use Makeable\ValueObjects\Tests\Amount\TestCurrency as Currency;
+use Makeable\ValueObjects\Amount\TestCurrency as Currency;
 
 class AmountOperationsTest extends AmountTestCase
 {

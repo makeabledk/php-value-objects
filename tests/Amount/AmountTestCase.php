@@ -3,22 +3,17 @@
 namespace Makeable\ValueObjects\Tests\Amount;
 
 use Makeable\ValueObjects\Amount\Amount;
-use Makeable\ValueObjects\Tests\Amount\TestCurrency as Currency;
 use Makeable\ValueObjects\Tests\TestCase;
 
 class AmountTestCase extends TestCase
 {
     public function setUp()
     {
-        Amount::baseCurrency(Currency::fromCode('EUR'));
+        Amount::test();
     }
 
     protected function amount($amount, $currency = null)
     {
-        if (is_string($currency)) {
-            $currency = Currency::fromCode($currency);
-        }
-
         return new Amount($amount, $currency);
     }
 }
