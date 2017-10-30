@@ -8,7 +8,6 @@
 
 This package provides a set of handy value objects:
 
-- Amount
 - Duration
 - Period
 - Whitelist
@@ -24,93 +23,6 @@ composer require makeabledk/php-value-objects
 ```
 
 ## Usage
-
-### Amount
-
-Amount provides a powerful way of interacting with amounts in different currencies.
-
-#### Initial setup
-
-The amount object requires a base currency to function. If you use Laravel that can be done from AppServiceProvider@boot:
-
-```php
-public function boot() {
-    Amount::baseCurrency(Currency::fromCode('EUR'));
-}
-```
-
-For that to work, you will need a Currency model that implements CurrencyContract. Consider the following implementation (Laravel):
-
-```php
-class Currency extends Eloquent implements \Makeable\ValueObjects\Amount\CurrencyContract
-{
-    public static function fromCode($code)
-    {
-        return static::where('code', $code)->firstOrFail();
-    }
-
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    public function getExchangeRate()
-    {
-        return $this->exchange_rate;
-    }
-}
-```
-Database table:
-```
-| id | code | exchange_rate |
-|----|------|---------------|
-| 1  | EUR  | 100.00        |
-| 2  | USD  | 111.00        |
-| 3  | DKK  | 750.00        |
-```
-
-### Example usages
-Quickly create an amount
-```php
-new Amount(100); // EUR since that's our default
-new Amount(100, Currency::fromCode('DKK')); 
-```
-
-Convert between currencies
-```php
-$eur = new Amount(100);
-$dkk = $eur->convertTo(Currency::fromCode('DKK')); // 750 
-```
-
-Perform simple calculations - even between currencies!
-```php
-$amount = new Amount(100, Currency::fromCode('EUR'));
-$amount->subtract(new Amount(50)); // 50 eur
-$amount->subtract(new Amount(375, Currency::fromCode('DKK'))); // 50 eur
-```
-
-If you are using Laravel and have a Product@getPriceAttribute() accessor that returns an Amount object, you can even do this:
-```php
-$products = Product::all();
-$productsTotalSum = Amount::sum($products, 'price'); 
-```
-
-Use the fluent modifiers for easy manipulation
-```php
-$amount = new Amount(110);
-$amount->minimum(new Amount(80)); // 110 EUR
-$amount->minimum(new Amount(120)); // 120 EUR
-$amount->maximum(new Amount(80)); // 80 EUR
-$amount->maximum(new Amount(750, Currency::fromCode('DKK')); // 100 EUR (eq. 750 DKK)
-```
-
-Easily export as an array, and re-instantiate if needed. Great for serving client API*.
-```php
-$exported = (new Amount(100))->toArray(); // ['amount' => 100, 'currency' => 'EUR', 'formatted' => 'EUR 100']
-$imported = Amount::fromArray($exported);
-```
-*Note it implements illuminate/support Arrayable contract, so it automatically casts to an array for eloquent models.
-
 
 ### Duration
 
