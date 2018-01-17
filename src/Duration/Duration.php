@@ -3,10 +3,11 @@
 namespace Makeable\ValueObjects\Duration;
 
 use Illuminate\Contracts\Support\Arrayable;
+use JsonSerializable;
 use Makeable\ValueObjects\Shared\RetrievesValues;
 use Makeable\ValueObjects\Shared\ValidatesArrays;
 
-class Duration implements Arrayable
+class Duration implements Arrayable, JsonSerializable
 {
     use DurationOperations,
         RetrievesValues,
@@ -96,6 +97,14 @@ class Duration implements Arrayable
         self::requiresProperties('seconds', $exported);
 
         return new static($exported['seconds']);
+    }
+
+    /**
+     * @return array
+     */
+    function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     /**

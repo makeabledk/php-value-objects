@@ -4,9 +4,10 @@ namespace Makeable\ValueObjects\Period;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
+use JsonSerializable;
 use Makeable\ValueObjects\Shared\ValidatesArrays;
 
-class Period implements Arrayable
+class Period implements Arrayable, JsonSerializable
 {
     use ValidatesArrays;
 
@@ -46,6 +47,14 @@ class Period implements Arrayable
         static::requiresProperties(['start', 'end'], $exported);
 
         return new static($exported['start'], $exported['end']);
+    }
+
+    /**
+     * @return array
+     */
+    function jsonSerialize()
+    {
+        return $this->toArray();
     }
 
     /**
