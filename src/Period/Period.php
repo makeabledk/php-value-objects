@@ -52,7 +52,7 @@ class Period implements Arrayable, JsonSerializable
     /**
      * @return array
      */
-    function jsonSerialize()
+    public function jsonSerialize()
     {
         return $this->toArray();
     }
