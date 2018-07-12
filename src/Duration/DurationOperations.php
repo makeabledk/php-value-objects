@@ -40,7 +40,9 @@ trait DurationOperations
         $sum = new static();
 
         foreach ($items as $item) {
-            $sum = $sum->add($callback($item));
+            if (($amount = $callback($item)) !== null) {
+                $sum = $sum ? $sum->add($amount) : $amount;
+            }
         }
 
         return $sum;
