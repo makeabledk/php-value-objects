@@ -92,8 +92,12 @@ class Duration implements Arrayable, JsonSerializable
      *
      * @return Duration
      */
-    public static function fromArray(array $exported)
+    public static function fromArray($exported)
     {
+        if ($exported === null) {
+            return;
+        }
+
         self::requiresProperties('seconds', $exported);
 
         return new static($exported['seconds']);
