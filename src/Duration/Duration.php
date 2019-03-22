@@ -14,11 +14,20 @@ class Duration implements Arrayable, JsonSerializable
         ValidatesArrays;
 
     /**
+     * Global format
+     *
      * Valid placeholders: hh, mm, ss.
      *
      * @var string
      */
     public static $format = 'hh:mm:ss';
+
+    /**
+     * Overridden local format
+     *
+     * @var string
+     */
+    protected $localFormat;
 
     /**
      * @var int
@@ -68,11 +77,22 @@ class Duration implements Arrayable, JsonSerializable
     }
 
     /**
+     * @param $format
+     * @return $this
+     */
+    public function setFormat($format)
+    {
+        $this->localFormat = $format;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function toFormat()
     {
-        return (new DurationFormatter($this))->get(static::$format);
+        return (new DurationFormatter($this))->get($this->localFormat ?: static::$format);
     }
 
     /**

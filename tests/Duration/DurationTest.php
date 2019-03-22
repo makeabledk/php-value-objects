@@ -38,4 +38,10 @@ class DurationTest extends TestCase
         Duration::$format = 'hh:mm:ss';
         $this->assertEquals('02:00:00', (string) Duration::create(2));
     }
+
+    public function test_a_specific_format_can_be_set_for_an_instance()
+    {
+        Duration::$format = 'hh:mm:ss';
+        $this->assertEquals('60:00', (string) Duration::create(1)->setFormat('mm:ss'));
+    }
 }
