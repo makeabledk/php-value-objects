@@ -14,7 +14,7 @@ class Duration implements Arrayable, JsonSerializable
         ValidatesArrays;
 
     /**
-     * Global format
+     * Global format.
      *
      * Valid placeholders: hh, mm, ss.
      *
@@ -23,7 +23,7 @@ class Duration implements Arrayable, JsonSerializable
     public static $format = 'hh:mm:ss';
 
     /**
-     * Overridden local format
+     * Overridden local format.
      *
      * @var string
      */
