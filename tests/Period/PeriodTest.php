@@ -43,7 +43,7 @@ class PeriodTest extends TestCase
 
     public function test_it_can_set_an_earliest_date()
     {
-        list($nextMonday, $nextWednesday, $nextSunday) = [
+        [$nextMonday, $nextWednesday, $nextSunday] = [
             Carbon::today()->next(Carbon::MONDAY),
             Carbon::today()->next(Carbon::MONDAY)->next(Carbon::WEDNESDAY),
             Carbon::today()->next(Carbon::MONDAY)->next(Carbon::SUNDAY),
@@ -70,7 +70,7 @@ class PeriodTest extends TestCase
 
     public function test_it_can_set_an_latest_date()
     {
-        list($nextMonday, $nextWednesday, $nextSunday) = [
+        [$nextMonday, $nextWednesday, $nextSunday] = [
             Carbon::today()->next(Carbon::MONDAY),
             Carbon::today()->next(Carbon::MONDAY)->next(Carbon::WEDNESDAY),
             Carbon::today()->next(Carbon::MONDAY)->next(Carbon::SUNDAY),
