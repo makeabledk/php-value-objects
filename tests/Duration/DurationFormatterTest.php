@@ -8,7 +8,7 @@ use Makeable\ValueObjects\Tests\TestCase;
 
 class DurationFormatterTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         Duration::$format = 'hh:mm:ss';
     }
