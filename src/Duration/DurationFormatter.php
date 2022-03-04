@@ -19,7 +19,7 @@ class DurationFormatter
     /**
      * DurationFormatter constructor.
      *
-     * @param Duration $duration
+     * @param  Duration  $duration
      */
     public function __construct(Duration $duration)
     {
@@ -33,7 +33,6 @@ class DurationFormatter
 
     /**
      * @param $format
-     *
      * @return mixed
      */
     public function get($format)
@@ -66,9 +65,8 @@ class DurationFormatter
     }
 
     /**
-     * @param Collection $units
+     * @param  Collection  $units
      * @param $format
-     *
      * @return mixed
      */
     protected function applyFormat(Collection $units, $format)
@@ -83,8 +81,7 @@ class DurationFormatter
     }
 
     /**
-     * @param Collection $units
-     *
+     * @param  Collection  $units
      * @return Collection
      */
     protected function normalizeUnitValues(Collection $units)
