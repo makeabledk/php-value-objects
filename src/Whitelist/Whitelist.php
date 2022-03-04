@@ -45,7 +45,6 @@ abstract class Whitelist
 
     /**
      * @param $value
-     *
      * @return bool
      */
     public static function isValid($value)

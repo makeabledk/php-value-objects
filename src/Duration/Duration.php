@@ -96,10 +96,9 @@ class Duration implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param float $hours
-     * @param int   $minutes
-     * @param int   $seconds
-     *
+     * @param  float  $hours
+     * @param  int  $minutes
+     * @param  int  $seconds
      * @return static
      */
     public static function create($hours, $minutes = 0, $seconds = 0)
@@ -108,8 +107,7 @@ class Duration implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param array $exported
-     *
+     * @param  array  $exported
      * @return Duration
      */
     public static function fromArray($exported)

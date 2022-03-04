@@ -5,8 +5,7 @@ namespace Makeable\ValueObjects\Duration;
 trait DurationOperations
 {
     /**
-     * @param Duration $duration
-     *
+     * @param  Duration  $duration
      * @return static
      */
     public function add(Duration $duration)
@@ -15,8 +14,7 @@ trait DurationOperations
     }
 
     /**
-     * @param Duration $duration
-     *
+     * @param  Duration  $duration
      * @return static
      */
     public function subtract(Duration $duration)
@@ -28,8 +26,7 @@ trait DurationOperations
      * Retrieve the sum of an array.
      *
      * @param $items
-     * @param null $callback
-     *
+     * @param  null  $callback
      * @return Duration
      *
      * @throws \Exception
