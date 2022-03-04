@@ -8,12 +8,11 @@
     },
     "require": {
         "php": ">=7.2",
-        "illuminate/support": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
         "nesbot/carbon": "1.*|2.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5",
-        "friendsofphp/php-cs-fixer": "^2.3"
+        "phpunit/phpunit": "^8.5|^9.5"
     },
     "config": {
         "optimize-autoloader": true,
@@ -27,7 +26,6 @@
         }
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit",
-        "style": "./vendor/bin/php-cs-fixer fix ./src --rules=@PSR2,@Symfony,ordered_class_elements,ordered_imports --verbose"
+        "test": "./vendor/bin/phpunit"
     }
 }
