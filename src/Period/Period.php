@@ -36,8 +36,7 @@ class Period implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param array $exported
-     *
+     * @param  array  $exported
      * @return Period
      *
      * @throws \Exception
@@ -89,8 +88,7 @@ class Period implements Arrayable, JsonSerializable
     // _________________________________________________________________________________________________________________
 
     /**
-     * @param Carbon $time
-     *
+     * @param  Carbon  $time
      * @return Period
      */
     public function earliest(Carbon $time)
@@ -102,8 +100,7 @@ class Period implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param Carbon $time
-     *
+     * @param  Carbon  $time
      * @return Period
      */
     public function latest(Carbon $time)
@@ -118,7 +115,6 @@ class Period implements Arrayable, JsonSerializable
 
     /**
      * @param $time
-     *
      * @return Carbon|null
      */
     protected function normalizeInput($time)
@@ -135,7 +131,6 @@ class Period implements Arrayable, JsonSerializable
 
     /**
      * @param $time
-     *
      * @return Carbon|null
      */
     protected function normalizeOutput($time)
@@ -144,8 +139,8 @@ class Period implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param Carbon $start
-     * @param Carbon $end
+     * @param  Carbon  $start
+     * @param  Carbon  $end
      *
      * @throws \Exception
      */
