@@ -24,8 +24,8 @@ class Period implements Arrayable, JsonSerializable
     /**
      * TimeSpan constructor.
      *
-     * @param $start
-     * @param $end
+     * @param  $start
+     * @param  $end
      */
     public function __construct($start = null, $end = null)
     {
@@ -114,7 +114,7 @@ class Period implements Arrayable, JsonSerializable
     // _________________________________________________________________________________________________________________
 
     /**
-     * @param $time
+     * @param  $time
      * @return Carbon|null
      */
     protected function normalizeInput($time)
@@ -130,7 +130,7 @@ class Period implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param $time
+     * @param  $time
      * @return Carbon|null
      */
     protected function normalizeOutput($time)

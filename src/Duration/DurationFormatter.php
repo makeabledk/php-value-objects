@@ -32,7 +32,7 @@ class DurationFormatter
     }
 
     /**
-     * @param $format
+     * @param  $format
      * @return mixed
      */
     public function get($format)
@@ -66,7 +66,7 @@ class DurationFormatter
 
     /**
      * @param  Collection  $units
-     * @param $format
+     * @param  $format
      * @return mixed
      */
     protected function applyFormat(Collection $units, $format)
