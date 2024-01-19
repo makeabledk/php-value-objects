@@ -5,8 +5,8 @@ namespace Makeable\ValueObjects\Shared;
 trait ValidatesArrays
 {
     /**
-     * @param $keys
-     * @param $array
+     * @param  $keys
+     * @param  $array
      *
      * @throws MissingPropertiesException
      */
