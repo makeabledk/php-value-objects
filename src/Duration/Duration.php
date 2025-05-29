@@ -37,7 +37,7 @@ class Duration implements Arrayable, JsonSerializable
     /**
      * Duration constructor.
      *
-     * @param $seconds
+     * @param  $seconds
      */
     public function __construct($seconds = 0)
     {
@@ -77,7 +77,7 @@ class Duration implements Arrayable, JsonSerializable
     }
 
     /**
-     * @param $format
+     * @param  $format
      * @return $this
      */
     public function setFormat($format)
