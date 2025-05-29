@@ -17,7 +17,7 @@ abstract class Whitelist
     protected $value;
 
     /**
-     * @param $value
+     * @param  $value
      */
     public function __construct($value)
     {
@@ -44,7 +44,7 @@ abstract class Whitelist
     }
 
     /**
-     * @param $value
+     * @param  $value
      * @return bool
      */
     public static function isValid($value)
