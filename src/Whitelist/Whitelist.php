@@ -24,7 +24,7 @@ abstract class Whitelist
         if (! static::isValid($value)) {
             throw new static::$exceptionClass('Invalid value '.$value);
         }
-        $this->status = $value;
+        $this->value = $value;
     }
 
     /**
@@ -40,7 +40,7 @@ abstract class Whitelist
      */
     public function get()
     {
-        return $this->status;
+        return $this->value;
     }
 
     /**
