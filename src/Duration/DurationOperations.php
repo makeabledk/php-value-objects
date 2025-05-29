@@ -25,7 +25,7 @@ trait DurationOperations
     /**
      * Retrieve the sum of an array.
      *
-     * @param $items
+     * @param  $items
      * @param  null  $callback
      * @return Duration
      *
