@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./vendor/bin/phpunit --migrate-configuration)",
+      "Bash(composer update:*)",
+      "Bash(./vendor/bin/phpunit)",
+      "Bash(./vendor/bin/phpunit --display-all-issues)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
